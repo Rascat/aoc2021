@@ -1,0 +1,2 @@
+(executable
+  (name sonar_sweep))
