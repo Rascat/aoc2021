@@ -25,8 +25,8 @@ let rec loop lst acc =
     | [] -> acc
 
 
-let calc_gamma list = List.map (fun x -> if x > 500 then 1 else 0) list
-let calc_epsilon list = List.map (fun x -> if x <= 500 then 1 else 0) list
+let calc_gamma list = List.map (fun x -> if x >= 500 then 1 else 0) list
+let calc_epsilon list = List.map (fun x -> if x < 500 then 1 else 0) list
 
 let rec list_to_string lst str =
     match lst with
