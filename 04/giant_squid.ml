@@ -85,14 +85,14 @@ let sum_list lst = List.fold_left (+) 0 lst
 let sum_unmarked (w: win) =
   List.flatten w.board.rows |> List.filter (fun x -> Bool.not (List.mem x w.numbers)) |> sum_list
 
-  let rec iter (is: int list) (g: game): win option =
-    match is with
-    | [] -> None
-    | i :: is -> begin
-      match check_boards g.boards (firstn i g.numbers) with
-      | None -> iter is g
-      | Some s -> Some s
-    end
+let rec iter (is: int list) (g: game): win option =
+  match is with
+  | [] -> None
+  | i :: is -> begin
+    match check_boards g.boards (firstn i g.numbers) with
+    | None -> iter is g
+    | Some s -> Some s
+  end
 
 let () =
   let g = create_game "input.txt" in
