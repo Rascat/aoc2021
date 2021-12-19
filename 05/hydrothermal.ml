@@ -80,7 +80,7 @@ let covered_points (l : line) : point list =
       )
    )
 
-let rec count_coverage (pts: point list) m =
+let rec count_coverage (pts: point list) (m: int PointMap.t) =
   match pts with
   | [] -> m
   | h :: t -> (

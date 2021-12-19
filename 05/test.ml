@@ -56,8 +56,8 @@ let tests =
            assert_raises (Failure "Only horizontal/vertical lines supported")
              (fun () -> covered_points ((0, 0), (3, 3))) );
          ( "counting of point coverage" >:: fun _ ->
-           assert_equal ~printer:point_count_to_string
-             [ ((0, 1), 2); ((0, 0), 1) ]
+           assert_equal
+             (PointMap.empty |> PointMap.add (0, 0) 1 |> PointMap.add (0, 1) 2)
              (count_coverage [ (0, 0); (0, 1); (0, 1) ] PointMap.empty ) );
        ]
 
