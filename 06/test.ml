@@ -43,6 +43,10 @@ let tests =
            assert_equal ~printer:string_of_int 5934
              (n_days [ create 3; create 4; create 3; create 1; create 2 ] 80
              |> List.length) );
+         ( "26984457539  fish after 256 days" >:: fun _ ->
+           assert_equal ~printer:string_of_int 26984457539
+             (n_days [ create 3; create 4; create 3; create 1; create 2 ] 256
+             |> List.length) );
        ]
 
 let _ = run_test_tt_main tests
