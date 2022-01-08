@@ -1,0 +1,6 @@
+(executable
+ (name test)
+ (libraries ounit2 str))
+(env
+  (dev
+    (flags (:standard -warn-error -A))))
